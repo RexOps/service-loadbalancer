@@ -1,0 +1,40 @@
+lvs_id: lv01
+vrrp_sync_group_name: vg01
+vrrp_instances:
+  - name: www01
+    state: MASTER
+    interface: enp0s3
+    router_id: 1
+    priority: 101
+    advert_int: 1
+    virtual_ips:
+      - ip: 192.168.9.50
+        cidr: 24
+
+maxconn: 4096
+haproxy_user: root
+haproxy_group: root
+contimeout: 5000
+clitimeout: 50000
+srvtimeout: 50000
+frontends:
+  - name: vs_http_80
+    bind: '*:80'
+    default_backend: pool_http_80
+backends:
+  - name: pool_http_80
+    balance: roundrobin
+    send_client_ip: 1
+    mode: http
+    http:
+      - option httpchk OPTIONS /
+      - option forwardfor
+      - option http-server-close
+    server:
+      - name: www01
+        dst: 192.168.10.11:80
+        options: check inter 5000
+      - name: www02
+        dst: 192.168.10.12:80
+        options: check inter 5000
+
