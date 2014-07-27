@@ -19,3 +19,4 @@ doc/bootstrap.pod
 doc/html
 *.txt
 screencasts
+lib
