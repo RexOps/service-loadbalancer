@@ -43,7 +43,7 @@ HAProxy is a free, very fast and reliable solution offering high availability, l
 To setup the project you can use the *rexify* command:
 
 ```bash
-rexify --init=https://bitbucket.org/jfried/service-loadbalancer.git
+rexify --init=https://github.com/RexOps/service-loadbalancer.git
 ```
 
 This command will clone the repository onto your harddrive and download also the needed dependencies defined in the *meta.yml* file.
