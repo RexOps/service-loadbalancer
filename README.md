@@ -54,6 +54,8 @@ This command will clone the repository onto your harddrive and download also the
 
 The *Rexfile* is the main entry point for Rex. This file is pretty small, because we're using the CMDB feature to provide all the necesarry information for the used Keepalived and HAProxy modules.
 
+The server groups are managed in the *server.ini* file.
+
 ```perl
 use Rex -feature => ['0.51'];
 
