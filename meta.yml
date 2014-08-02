@@ -1,0 +1,11 @@
+Name: Service Loadbalancer
+Description: The loadbalancer service
+Author: jan gehring <jan.gehring@gmail.com>
+License: Apache 2.0
+Require:
+  HAProxy:
+    git: https://bitbucket.org/jfried/rex-haproxy.git
+    branch: master
+  Keepalived:
+    git: https://bitbucket.org/jfried/rex-keepalived.git
+    branch: master
