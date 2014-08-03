@@ -23,7 +23,7 @@ task "uptime", "server1", make {
 
 ### Keepalive
 
-Keepalived (http://www.keepalived.org/) is a layer 4 loadbalancer. In this example we're going to use its VRRP feature to silently fail over ip addresses between hosts.
+Keepalived (http://www.keepalived.org/) routing software using LVS for layer 4 loadbalancing. In this example we're going to use its VRRP feature to silently fail over ip addresses between hosts.
 
 From its website:
 
